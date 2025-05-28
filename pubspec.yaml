@@ -1,0 +1,62 @@
+name: tasks
+description: "A new Flutter project."
+
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.0
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Database
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # id
+  uuid: ^4.5.1
+
+  # Internationalization and localization facilities
+  intl: ^0.20.2
+
+  # Animation
+  animate_do: ^4.2.0
+
+  # Dialogs
+  panara_dialogs: ^0.1.5
+
+  # Animations exported as json
+  lottie: ^3.3.1
+
+  # Toast
+  ftoast: ^2.0.0
+
+  # Slider
+  flutter_slider_drawer: ^3.0.2
+
+  # Date Picker
+  flutter_cupertino_date_picker_fork: ^1.0.7
+
+  logger: ^2.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.4.15
+  hive_generator: ^2.0.1
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+assets:
+  - assets/img/
+  - assets/lottie/
