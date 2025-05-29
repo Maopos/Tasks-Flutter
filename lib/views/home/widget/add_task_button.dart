@@ -10,7 +10,7 @@ class AddTaskButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        debugPrint(' 💡 Go to tasks view...');
+        debugPrint('💡 Go to tasks view...');
       },
       child: Material(
         borderRadius: BorderRadius.circular(15),

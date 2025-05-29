@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tasks/utils/app_colors.dart';
 import 'package:tasks/views/home/widget/add_task_button.dart';
 import 'package:tasks/views/home/widget/app_bar.dart';
+import 'package:tasks/views/home/widget/task_item.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -45,17 +45,10 @@ class HomeBody extends StatelessWidget {
             width: double.infinity,
             height: 745,
             child: ListView.builder(
-              itemCount: 5,
+              itemCount: 4,
               scrollDirection: Axis.vertical,
               itemBuilder: (context, index) {
-                return AnimatedContainer(
-                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryColor.withAlpha(100),
-                  ),
-                  duration: const Duration(milliseconds: 600),
-                  child: ListTile(),
-                );
+                return TaskItem();
               },
             ),
           ),
