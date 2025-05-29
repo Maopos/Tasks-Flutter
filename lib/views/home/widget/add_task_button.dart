@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tasks/utils/app_colors.dart';
-import 'package:tasks/utils/logger.dart';
 
 class AddTaskButton extends StatelessWidget {
   const AddTaskButton({
@@ -11,7 +10,7 @@ class AddTaskButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Log.p.i(" 💡 Go to tasks view...");
+        debugPrint(' 💡 Go to tasks view...');
       },
       child: Material(
         borderRadius: BorderRadius.circular(15),
