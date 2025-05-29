@@ -36,6 +36,7 @@ class HomeBody extends StatelessWidget {
       height: double.infinity,
       child: Column(
         children: [
+          /// App bar
           HomeAppBar(textTheme: textTheme),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -44,6 +45,8 @@ class HomeBody extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             height: 745,
+
+            /// Tasks List
             child: ListView.builder(
               itemCount: 4,
               scrollDirection: Axis.vertical,
