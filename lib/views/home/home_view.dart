@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tasks/extensions/space_ext.dart';
 import 'package:tasks/utils/app_colors.dart';
-import 'package:tasks/utils/app_strings.dart';
 import 'package:tasks/views/home/widget/add_task_button.dart';
+import 'package:tasks/views/home/widget/app_bar.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -17,9 +16,9 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      floatingActionButton: AddTaskButton(),
-
       body: HomeBody(),
+
+      floatingActionButton: AddTaskButton(),
     );
   }
 }
@@ -38,48 +37,27 @@ class HomeBody extends StatelessWidget {
       child: Column(
         children: [
           HomeAppBar(textTheme: textTheme),
-        ],
-      ),
-    );
-  }
-}
-
-class HomeAppBar extends StatelessWidget {
-  const HomeAppBar({
-    super.key,
-    required this.textTheme,
-  });
-
-  final TextTheme textTheme;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 60),
-      width: double.infinity,
-      height: 100,
-      color: const Color.fromARGB(16, 244, 67, 54),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: 30,
-            width: 30,
-            child: CircularProgressIndicator(
-              value: 1 / 3,
-              backgroundColor: Colors.grey,
-              valueColor: AlwaysStoppedAnimation(AppColors.primaryColor),
-            ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Divider(color: Colors.blue),
           ),
-          25.w,
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(AppStrings.mainTitle, style: textTheme.displayLarge),
-              3.h,
-              Text("1 of 3", style: textTheme.titleMedium),
-            ],
+          SizedBox(
+            width: double.infinity,
+            height: 745,
+            child: ListView.builder(
+              itemCount: 5,
+              scrollDirection: Axis.vertical,
+              itemBuilder: (context, index) {
+                return AnimatedContainer(
+                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryColor.withAlpha(100),
+                  ),
+                  duration: const Duration(milliseconds: 600),
+                  child: ListTile(),
+                );
+              },
+            ),
           ),
         ],
       ),
