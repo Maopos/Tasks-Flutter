@@ -51,7 +51,14 @@ class HomeBody extends StatelessWidget {
               itemCount: 4,
               scrollDirection: Axis.vertical,
               itemBuilder: (context, index) {
-                return TaskItem();
+                return Dismissible(
+                  direction: DismissDirection.horizontal,
+                  onDismissed: (_) {
+                    debugPrint('📒 Removing task from database...$index');
+                  },
+                  key: Key(index.toString()),
+                  child: const TaskItem(),
+                );
               },
             ),
           ),
